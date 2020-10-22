@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $(".floating-head .content").draggable();
+
+                $(document).mousemove(evt => { 
+                    $(".snap-quadrant").each(function (){
+                        const rect = this.getBoundingClientRect();
+                        if (rect.left <= evt.clientX && rect.right >= evt.clientX &&
+                        rect.top <= evt.clientY && rect.bottom >= evt.clientY) {
+                            $(this).addClass("hovered");
+                        } else {
+                            $(this).removeClass("hovered");
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="flex-container snap-points">
+                <div class="snap-quadrant top left">
+                    <div class="snap-point"></div>
+                </div>
+                <div class="snap-quadrant top right">
+                    <div class="snap-point"></div>
+                </div>
+                <div class="snap-quadrant bottom left">
+                    <div class="snap-point"></div>
+                </div>
+                <div class="snap-quadrant bottom right">
+                    <div class="snap-point"></div>
+                </div>
+            </div>
+            <div class="flex-container floating-head">
+                <div class="content"></div>
+            </div>
+            <!-- <div class="flex-container shared-screen">
+                <div class="content"></div>
+            </div> -->
+        </div>
+    </body>
+</html>
