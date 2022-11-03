@@ -1,14 +1,15 @@
 <html>
-    <head>
-        <script src="https://client.airkit.com/18/air-client.js"></script>
-        <script>
-            Airkit.createClient("us:51f8d0a0-c060-481c-bda7-9c8e2101ecfe").then((client) => {
-              client.start()
-            })
-        </script>
-        
-    </head>
-    <body>
-        <div>Fun!</div>
-    </body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>Airkit web SDK</title>
+  </head>
+  <body>
+    <div id="airkit-sdk"></div>
+    <script src="https://client.airkit.com/websdk/1.0/airkit_sdk.js"></script>
+    <script>
+      const sdk = new window.AirkitWebSDK({ renderMode: "inline" })
+      sdk.render({ url: https://app.airkit.com/x-effect/sdk }) 
+    </script>
+  </body>
 </html>
