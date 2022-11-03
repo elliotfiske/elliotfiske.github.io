@@ -12,9 +12,12 @@
       
       window.fetch = (url, options) => {
         if (url === "https://app.airkit.com/x-effect/sdk") {
-          return Promise.resolve({ headers: 
-                                  { "x-airkit-session-id": "c5555ea3-66d7-4795-ad5b-594875a5fb82",
+          const headerMans =                                   { "x-airkit-session-id": "c5555ea3-66d7-4795-ad5b-594875a5fb82",
                                     "x-airkit-session-url": "https://app.airkit.com/u/30HkKK8qeYDM9rZRHtfFh?" }
+          return Promise.resolve({ headers: 
+          {
+get: (key) => headerMans[key]
+          }
                                  })
         } else {
           return ogFetch(url, options)
