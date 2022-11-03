@@ -8,6 +8,18 @@
     <div id="airkit-sdk"></div>
     <script src="https://client.airkit.com/websdk/1.0/airkit_sdk.js"></script>
     <script>
+      const ogFetch = window.fetch
+      
+      window.fetch = (url, options) => {
+        if (url === "https://app.airkit.com/x-effect/sdk") {
+          return Promise.resolve({ headers: 
+                                  { "x-airkit-session-id": "c5555ea3-66d7-4795-ad5b-594875a5fb82",
+                                    "x-airkit-session-url": "https://app.airkit.com/u/30HkKK8qeYDM9rZRHtfFh?" }
+                                 })
+        } else {
+          return ogFetch(url, options)
+        }
+      }
       const sdk = new window.AirkitWebSDK({ renderMode: "inline" })
       sdk.render({ url: "https://app.airkit.com/x-effect/sdk" }) 
     </script>
