@@ -1,0 +1,19 @@
+<svg width="92" height="92" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="38" cy="38" r="37.5" fill="#D3E6FF" stroke="#393939"/>
+    <mask id="mask0_908_15285" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="74" height="74">
+        <circle cx="38" cy="38" r="36.5" fill="#BD6565" stroke="#393939"/>
+    </mask>
+    <g mask="url(#mask0_908_15285)">
+        <rect x="18.5" y="13.5" width="39" height="62" rx="5.5" fill="#D3E6FF" stroke="#393939"/>
+        <rect x="21.5" y="16.5" width="33" height="61" rx="2.5" fill="#F4F4F4" stroke="#393939"/>
+        <circle cx="28" cy="25" r="3.5" fill="#D3E6FF" stroke="#393939"/>
+        <circle cx="28" cy="57" r="3.5" stroke="#126DE7" stroke-dasharray="2 2"/>
+        <circle cx="48" cy="44" r="3.5" fill="#D3E6FF" stroke="#393939"/>
+    </g>
+    <rect x="34.5" y="21.5" width="17" height="14" rx="1.5" fill="white" stroke="#393939"/>
+    <circle cx="39.1667" cy="26.1667" r="1.16667" fill="#393939"/>
+    <circle cx="47.278" cy="26.1667" r="1.16667" fill="#393939"/>
+    <rect x="40.1113" y="29.6667" width="6.22222" height="2.33333" rx="1.16667" fill="#393939"/>
+    <rect x="35.5" y="53.5" width="16" height="13" rx="1.5" stroke="#126DE7" stroke-dasharray="2 2"/>
+    <rect x="24.5" y="40.5" width="17" height="7" rx="1.5" fill="#D3E6FF" stroke="#393939"/>
+</svg>

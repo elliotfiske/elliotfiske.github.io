@@ -1,0 +1,20 @@
+<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="38" cy="38.0001" r="37.5" fill="#D3E6FF" stroke="#393939"/>
+    <mask id="mask0_1501_739" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="74" height="74">
+        <circle cx="38" cy="38.0001" r="36.5" fill="#BD6565" stroke="#393939"/>
+    </mask>
+    <g mask="url(#mask0_1501_739)">
+        <path d="M10.5 19.5001H64.5V75.0001C64.5 76.3808 63.3807 77.5001 62 77.5001H13C11.6193 77.5001 10.5 76.3808 10.5 75.0001V19.5001Z" fill="#F4F4F4" stroke="#393939"/>
+        <path d="M10.5 17.0001C10.5 15.6193 11.6193 14.5001 13 14.5001H62C63.3807 14.5001 64.5 15.6193 64.5 17.0001V19.5001H10.5V17.0001Z" fill="#D3E6FF" stroke="#393939"/>
+        <circle cx="14" cy="17.0001" r="1" fill="#126DE7"/>
+        <circle cx="18" cy="17.0001" r="1" fill="#126DE7"/>
+        <circle cx="22" cy="17.0001" r="1" fill="#126DE7"/>
+        <rect x="19.5" y="44.5001" width="37" height="16" rx="0.5" stroke="#126DE7" stroke-dasharray="2 2"/>
+        <rect x="19.5" y="33.5001" width="37" height="6" rx="0.5" fill="#D3E6FF" stroke="#393939"/>
+        <rect x="26" y="64.0001" width="24" height="6" rx="1" fill="#126DE7"/>
+        <rect x="19.5" y="23.5001" width="37" height="6" rx="0.5" fill="#D3E6FF" stroke="#393939"/>
+        <circle cx="34" cy="50.0001" r="1" fill="#393939"/>
+        <circle cx="42" cy="50.0001" r="1" fill="#393939"/>
+        <rect x="35" y="53.0001" width="6" height="2" rx="1" fill="#393939"/>
+    </g>
+</svg>
