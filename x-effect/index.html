@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>Airkit web SDK</title>
+  </head>
+  <body>
+    <div id="airkit-sdk"></div>
+    <script src="https://client.airkit.com/websdk/1.0/airkit_sdk.js"></script>
+    <script>
+      const ogFetch = window.fetch
+      
+      window.fetch = (url, options) => {
+        if (url === "https://app.airkit.com/x-effect/sdk") {
+          const headerMans =                                   { "x-airkit-session-id": "981ba324-12f0-4669-ad75-f8962a159c15",
+                                    "x-airkit-session-url": "https://app.airkit.com/u/yy0HopmKaFRHWmjYEC8wK?" }
+          return Promise.resolve({ headers: 
+          {
+get: (key) => headerMans[key]
+          }
+                                 })
+        } else {
+          return ogFetch(url, options)
+        }
+      }
+      const sdk = new window.AirkitWebSDK({ renderMode: "inline" })
+      sdk.render({ url: "https://app.airkit.com/x-effect/sdk" }) 
+    </script>
+  </body>
+</html>
