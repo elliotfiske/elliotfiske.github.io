@@ -20,9 +20,17 @@ a {
 @import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
 
 #evilLetter, #goodLetter {
-	font-family: "Gochi Hand", cursive;
-  	color: yellow;
+	font-family: "Gochi Hand", "Comic Sans MS", "Comic Sans", sans-serif;
   	white-space: pre-wrap;
+  font-size: 32px;
+}
+
+#evilLetter {
+  color: red;
+}
+
+#goodLetter {
+  color: green; 
 }
 
 textarea {
@@ -67,7 +75,7 @@ window.submitTheLetter = function(evil) {
             const link = "https://app.airkit.com/view-letter?authorId=" + yourId
 
             $("#afterSubmit").append("<br />")
-            $("#afterSubmit").append(`<a href='${link}'>${link}</a>`)
+            $("#afterSubmit").append(`<a target="_blank" href='${link}'>${link}</a>`)
     	}
     );
   
@@ -84,31 +92,25 @@ It&#39;s almost time for the (text-colour:aqua)[Gleaming Solstice]. You absolute
 
 Scout whimpers and runs over to comfort you as he notices your mood darken.
 
-[[You only wanted to help...]]</tw-passagedata><tw-passagedata pid="3" name="Ruin the Solstice" tags="" position="775,1025" size="100,100">TODO: (describe the goblins finding the tree chopped down, following the crystals back to the human village. Violence! Fighting!)
+[[You only wanted to help...]]</tw-passagedata><tw-passagedata pid="3" name="Ruin the Solstice" tags="" position="775,1025" size="100,100">(set: $ruined to 1)
+You snarl, your heart twisting inside you and hardening against those who did you wrong in the past.
 
-You feel... //good//. Your twisted heart grimaces and turns even blacker. These obnoxious villagers finally all got what they deserved! You slink away in a self-righteous high.
+Why should you forgive them, when all they&#39;ve done is hurt you? They would probably do the same to you if they had the chance!
 
-Suddenly your mirror lights up again and you see yourself in the past. You must send a letter back to yourself in order to complete the loop!
+You slam the button with vindictive force. (text-colour:cyan)[Unstable energy] courses through the wires snaking around the workshop, drawing in arcane energy in a burst of power.
 
-//Send a letter to another player to convince them to make the same choice as you.//
+Scout and Fae dash away for safety as the workbench (text-colour:cyan)[explodes] in an arcane surge, throwing you back and knocking you hard against the cave wall.
 
-&lt;script&gt;
-$(&quot;textarea&quot;).bind(&quot;input propertychange&quot;, function() {
-	const val = $(&quot;textarea&quot;).val()
-    
-    if (val === &quot;&quot;) {
-    	$(&quot;#submitter&quot;).prop(&quot;disabled&quot;, true);
-    } else {
-    	$(&quot;#submitter&quot;).prop(&quot;disabled&quot;, false);
-    }
-})
-&lt;/script&gt;
+You groggily get up, and make your way to the mouth of your cave, overlooking the human and goblin villages. Your face twists into a wicked, malicious grin as you see your hard work pay off - you can see the (text-colour:green)[Mosswhisper Monarch] sticking out of the village square, pixies and faeries swirling around confused as the humans begin to wake up and wonder at the strange change to the solstice tree.
 
-&lt;textarea placeholder=&quot;Enter your letter here...&quot; id=&quot;letter-input&quot; class=&quot;evil&quot; /&gt;
+As dawn breaks, you finally see what you were hoping for - a goblin war party, brimming with the rage and fury from their sacred tree being stolen, bristling with spears, knives, and arrows, making their haphazard way across the plains to the human village.
 
-&lt;button id=&quot;submitter&quot; disabled onclick=&quot;submitTheLetter(true)&quot;&gt;Submit&lt;/button&gt;
+Soon the air is filled with screams, shouts, and smoke as the two tribes do battle far below your perch.
 
-&lt;div id=&quot;afterSubmit&quot; /&gt;</tw-passagedata><tw-passagedata pid="4" name="You only wanted to help..." tags="" position="75,450" size="100,100">You knew you were taking a risk by straying so close to the human encampment. But you needed a particular type of (text-colour:green)[lichen] that grew around that area for your latest experiment.
+You&#39;ve done it! You&#39;ve ruined the solstice, probably for years to come! You giggle in a self-righteous high.
+
+[[Suddenly, the mirror lights up again...]]
+</tw-passagedata><tw-passagedata pid="4" name="You only wanted to help..." tags="" position="75,450" size="100,100">You knew you were taking a risk by straying so close to the human encampment. But you needed a particular type of (text-colour:green)[lichen] that grew around that area for your latest experiment.
 
 You saw a human child wandering lost and alone in the swamp, and you wanted to help him.
 
@@ -121,7 +123,7 @@ The runt of the litter, you were ridiculed from the moment you were born. But wi
 
 [[But enough about you]]. Back to the plan at hand...</tw-passagedata><tw-passagedata pid="6" name="rebuilt your workshop" tags="" position="375,700" size="100,100">Over the years, your workshop has become a work of art unto itself. Every open surface is covered with [[trinkets]] and [[curiosities]].
 
-But now, most of your baubles are shoved to the side, making room for your ultimate plan: [[ruining the Gleaming Solstace]].</tw-passagedata><tw-passagedata pid="7" name="trinkets" tags="" position="600,650" size="100,100">You&#39;ve amassed quite the collection of strange artifacts throughout the years, purchased from traveling merchants and rescued from long-forgotten crypts.
+But now, most of your baubles are shoved to the side, making room for your ultimate plan: [[ruining the Gleaming Solstice]].</tw-passagedata><tw-passagedata pid="7" name="trinkets" tags="" position="600,650" size="100,100">You&#39;ve amassed quite the collection of strange artifacts throughout the years, purchased from traveling merchants and rescued from long-forgotten crypts.
 
 An (text-colour:yellow)[eternally-spinning top], wobbling slightly as it continues to whiz along with no apparent power source.
 
@@ -143,9 +145,9 @@ But the real birth of (text-colour:green)[The Grunch] was when you made your way
 
 You had been spotted by a goblin scout consorting with the //humans//. As the runt who was also the smartest of the goblins you had never been trusted and it didn&#39;t take much to turn the whole tribe against you.
 
-Rejected twice, you struck off on your own. You were always happier by yourself, anyways. You slunk off to a place nobody could find you, in the tall, treacherous, twisting cliffs overlooking the swamp and the village, and [[rebuilt your workshop]].</tw-passagedata><tw-passagedata pid="10" name="ruining the Gleaming Solstace" tags="" position="350,850" size="100,100">Your plan was devious, clever, and certain to succeed. Tensions were already high between the goblin tribe and the human village, so it wouldn&#39;t take much of a provocation to get them at each other&#39;s throats.
+Rejected twice, you struck off on your own. You were always happier by yourself, anyways. You slunk off to a place nobody could find you, in the tall, treacherous, twisting cliffs overlooking the swamp and the village, and [[rebuilt your workshop]].</tw-passagedata><tw-passagedata pid="10" name="ruining the Gleaming Solstice" tags="" position="350,850" size="100,100">Your plan was devious, clever, and certain to succeed. Tensions were already high between the goblin tribe and the human village, so it wouldn&#39;t take much of a provocation to get them at each other&#39;s throats.
 
-The first step of your plan is to sneak into the human village and steal some of the  (text-color:cyan)[solstace crystals] that light the merriment of the Gleaming Solstice, as well as carting off the towering (text-color:green)[solstice tree] that brightens the village square.
+The first step of your plan is to sneak into the human village and steal some of the  (text-color:cyan)[solstice crystals] that light the merriment of the Gleaming Solstice, as well as carting off the towering (text-color:green)[solstice tree] that brightens the village square.
 
 You&#39;ve dressed yourself in the ridiculous costume of the mythical (text-colour:red)[Jingleberry Gnomes], part of the Gleaming Solstice tradition. These ancient gnomes supposedly taught the humans how to create the gleaming, hovering crystals that were an important part of the Solstice, and doled out presents or pranks to children depending on their behavior for the year.
 
@@ -153,13 +155,11 @@ You had a pointy red felt cap and a red vest, a puffy beard of cotton obscuring 
 
 And, of course, your trusty Bag of Holding slung over your back.
 
-[[You set off, your loyal companions Scout and Fae following close behind you]].</tw-passagedata><tw-passagedata pid="11" name="slunk back to your workshop high on the twisted cliffs" tags="" position="525,1250" size="100,100">You paced around your cave, stricken with indecision. Should you enact your plan and leave both of the villages to their horrible fate? Or should you show mercy and save Christmas?
+[[You set off, your loyal companions Scout and Fae following close behind you]].</tw-passagedata><tw-passagedata pid="11" name="go back to your workshop high on the twisted cliffs and trigger the teleportation spell" tags="" position="525,1250" size="100,100">You paced around your cave, stricken with indecision. Should you enact your plan and leave both of the villages to their horrible fate? Or should you show mercy and save the solstice?
 
-TODO: Flesh out this scene
+Suddenly, the (text-colour:orange)[brass mirror] in the corner sparkles with otherworldly light... the image fractures, and you see two versions of yourself - one with a (text-colour:red)[twisted, sickening grin], and the other with (text-colour:green)[eyes of hopeful benevolence].
 
-Suddenly, the (text-colour:orange)[brass mirror] in the corner sparkled with otherworldly light... in it, you saw two versions of yourself - one was EVIL and the other was GOOD.
-
-They each hand you a (text-colour:yellow)[letter]...
+They each extend a hand containing a (text-colour:yellow)[letter]. Without thinking, you reach forward and take hold of the letters, and suddenly find them physically in your hand!
 
 The first one is stained with blood and radiates malice. You shudder as you read the scrawled words...
 
@@ -169,13 +169,16 @@ The other letter radiates with positive intent and feelings of goodwill. Just lo
 
 &lt;pre id=&quot;goodLetter&quot;&gt;Loading...&lt;/pre&gt;
 
+The teleport spell is wired up to a (text-colour:cyan)[big glowing button] on your workshop desk. All that remains is to press it.
 
 So, what&#39;ll it be?
 
+(if: $ruined is 1)[You&#39;ve already chosen to [[Ruin the Solstice]]. No turning back now.]
+(else-if: $saved is 1)[You&#39;ve already chosen to [[Save the Solstice]]. No turning back now]
+(else:)[
 [[Ruin the Solstice]]
 
-[[Save the Solstice]]
-</tw-passagedata><tw-passagedata pid="12" name="entranced you" tags="" position="75,575" size="100,100">Your ears pricked up to the sound of merriment, lovely lutes and horns intermingling in songs of celebration. The child told you that it was the (text-colour:cyan)[Gleaming Solstice], a harvest celebration of gifts, generosity, and good-will.
+[[Save the Solstice]]]</tw-passagedata><tw-passagedata pid="12" name="entranced you" tags="" position="75,575" size="100,100">Your ears pricked up to the sound of merriment, lovely lutes and horns intermingling in songs of celebration. The child told you that it was the (text-colour:cyan)[Gleaming Solstice], a harvest celebration of gifts, generosity, and good-will.
 
 You&#39;d never seen anything like it... still holding the child&#39;s hand, you wandered through the streets of the village, taking in the sights and sounds of the Gleaming Solstice.
 
@@ -183,7 +186,8 @@ Enchanted, twinkling crystals hovered all around, projecting their sparkling lig
 
 Villagers danced around you, in various states of inebration, all celebrating wildly. Neighbors exchanged gifts and gratitude, bringing warmth to one another in the harsh winter cold.
 
-Entranced by the revelry, merriment, and the lovingly-placed gleaming decorations, [[you let your guard down]].</tw-passagedata><tw-passagedata pid="13" name="Save the Solstice" tags="" position="825,1225" size="100,100">TODO: You bring back all the crystals and stuff.
+Entranced by the revelry, merriment, and the lovingly-placed gleaming decorations, [[you let your guard down]].</tw-passagedata><tw-passagedata pid="13" name="Save the Solstice" tags="" position="825,1225" size="100,100">(set: $saved to 1)
+TODO: You bring back all the crystals and stuff.
 
 Everybody is very happy.
 
@@ -212,21 +216,21 @@ $(&quot;textarea&quot;).bind(&quot;input propertychange&quot;, function() {
 
 &lt;button id=&quot;submitter&quot; disabled onclick=&quot;submitTheLetter(false)&quot;&gt;Submit&lt;/button&gt;
 
-&lt;div id=&quot;afterSubmit&quot; /&gt;</tw-passagedata><tw-passagedata pid="14" name="You set off, your loyal companions Scout and Fae following close behind you" tags="" position="325,975" size="100,100">The first stage of your plan is to perform a heist on the (text-colour:green)[Mosswhisper Monarch], an ancient tree sacred to the goblin tribe, and frame the humans for the crime by setting up the tree in the village square.
-
-You make your way out to the giant tree, partway between the goblin and human villages. You feel as if the tree judges you silently, towering and massive over the (finish tree description). Pixies and faeries make their home in the tree, chattering amongst themselves, their voices sounding like faint tinkling bells.
-
-TODO: Describe placing down the teleport runes that will whisk away the tree to the center of the village.
-
-[[You make your way to the village for the second stage of the plan]].</tw-passagedata><tw-passagedata pid="15" name="&quot;Mister Gnome, why are you taking our tree?&quot;" tags="" position="350,1250" size="100,100">A small child had caught you, her eyes sparkling with wonder. You shoot a glance up at Fae on a nearby rooftop, who gives the cat equivalent of a shrug.
+&lt;div id=&quot;afterSubmit&quot; /&gt;</tw-passagedata><tw-passagedata pid="14" name="&quot;Mister Gnome, why are you taking our tree?&quot;" tags="" position="350,1125" size="100,100">A small child had caught you, her eyes sparkling with wonder. You shoot a glance up at Fae on a nearby rooftop, who gives the cat equivalent of a shrug.
 
 You sit on top of your Bag of Holding, 9/10ths of the way down the tree, thankful for your ridiculous Jingleberry Gnome costume. 
 
 //&quot;I&#39;m just taking this tree and these crystals in for repairs! It&#39;s bad luck to see a Jingleberry Gnome before the Solstice, child!&quot;// you tried to mimic what a holiday-themed gnome would sound like, mysterious yet jolly. //&quot;Now go to bed before I uh... leave some dung in your socks!&quot;//
 
-TODO: Finish this scene. Scoop up the rest of the tree and put down the teleport runes to teleport the other tree here in its place. Then I guess put a bunch of crystals back at where the old tree was? Actually I may need to swap the order back and have the village scene happen first, put down runes in the village, then lay the crystal trail on the way to the goblin tree and teleport it away. That would be a little bit cleaner.
+Scout walks up to the girl and she giggles as he flops over on his back, tail wagging. You glance around and jump a few times on the top of the sack, finally squeezing the last of the tree into the bag.
 
-Before any of the villagers awoke, you [[slunk back to your workshop high on the twisted cliffs]].</tw-passagedata><tw-passagedata pid="16" name="Fae is your master of stealth" tags="" position="550,975" size="100,100">TODO: Write Fae&#39;s backstory here</tw-passagedata><tw-passagedata pid="17" name="You can tell that he just wishes you and the villages could be friends" tags="" position="150,975" size="100,100">TODO: Write Scout&#39;s backstory here</tw-passagedata><tw-passagedata pid="18" name="You make your way to the village for the second stage of the plan" tags="" position="350,1125" size="100,100">You reach the edge of the village. [[Fae is your master of stealth]], slipping through the shadows and snaking silently across the village roofs, alerting you to any passing townsfolk or guards.
+You start laying down small runes etched with symbols that glow a brilliant blue. As you lay out the last one, you see the girl reaching down towards one of them. //&quot;Don&#39;t touch that!&quot;// you snap, then regain control of yourself. //&quot;Ah... I mean, that&#39;s delicate Gnomish magic - you don&#39;t want to mess up the Solstice, do you?&quot;//
+
+She shakes her head and backs off. You turn to leave, but before you do, you feel a tugging on the hem of your cloak.
+
+You see the girl holding out a small honeycake, baked to look like a crescent moon. &quot;Happy Solstice, Mister Gnome!&quot; She beams at you as you carefully take the cake and put it in your sack. You feel... gratitude? No, it must be indigestion. You grunt and spin away, thrown slightly off balance by the interaction.
+
+Back to the plan. You [[make your to the ancient sacred tree for the second stage]].</tw-passagedata><tw-passagedata pid="15" name="Fae is your master of stealth" tags="" position="550,975" size="100,100">TODO: Write Fae&#39;s backstory here</tw-passagedata><tw-passagedata pid="16" name="You can tell that he just wishes you and the villages could be friends" tags="" position="150,975" size="100,100">TODO: Write Scout&#39;s backstory here</tw-passagedata><tw-passagedata pid="17" name="You set off, your loyal companions Scout and Fae following close behind you" tags="" position="350,1000" size="100,100">You reach the edge of the village. [[Fae is your master of stealth]], slipping through the shadows and snaking silently across the village roofs, alerting you to any passing townsfolk or guards.
 
 The village is silent, the first snow of winter beginning to drift down in dreamy, swirling snowflakes. You slink along the streets, gathering up the glowing solstice crystals and stuffing them in your Bag of Holding.
 
@@ -238,7 +242,37 @@ You clamber your way up to the very top of the tree, and hold your trusty (text-
 
 You make it almost all the way down when the bag gets stuck! The pine tree, wider at the bottom, stretches the mouth of your Bag of Holding, and refuses to move.
 
-Suddenly, you hear a small voice behind you. [[&quot;Mister Gnome, why are you taking our tree?&quot;]]</tw-passagedata></tw-storydata>
+Suddenly, you hear a small voice behind you. [[&quot;Mister Gnome, why are you taking our tree?&quot;]]</tw-passagedata><tw-passagedata pid="18" name="make your to the ancient sacred tree for the second stage" tags="" position="350,1250" size="100,100">The second stage of your plan is to heist the (text-colour:green)[Mosswhisper Monarch], an ancient tree sacred to the goblin tribe, and frame the humans for the crime by setting up the tree in the village square.
+
+You make your way towards the site of the tree, dropping a few glittering solstice crystals out of your sack as you go.
+
+You reach the home of the giant tree, partway between the goblin and human villages. Its sturdy trunk and thick, twisting roots plunge down into the watery grove where it stands. Pixies and faeries alike make their home in the tree, appearing as small lights flitting around the boughs. They chatter amongst themselves, their voices sounding like faint tinkling bells.
+
+You reach into your bag for the other set of teleport runes to surround the tree. Your hand brushes against the honeycake the girl gave you and you pause - you feel that indigestion again, your heart burning as you try to shake the memory out of your head.
+
+You brush aside moss and place down anothe ring of glowing blue teleport runes. All that remains now is to [[go back to your workshop high on the twisted cliffs and trigger the teleportation spell]].</tw-passagedata><tw-passagedata pid="19" name="Suddenly, the mirror lights up again..." tags="" position="1000,975" size="100,100">A stabbing pain shoots through your head. You realize this must be a time paradox - you have to complete the loop!
+
+You see your past self, waffling with pitiful indecision. If only he knew how wonderful it felt to get revenge! You rifle through your things and snatch a pen and paper to scrawl a letter to send through the mirror.
+
+//Send a letter to another player to convince them to make the same choice as you.//
+
+&lt;script&gt;
+$(&quot;textarea&quot;).bind(&quot;input propertychange&quot;, function() {
+	const val = $(&quot;textarea&quot;).val()
+    
+    if (val === &quot;&quot;) {
+    	$(&quot;#submitter&quot;).prop(&quot;disabled&quot;, true);
+    } else {
+    	$(&quot;#submitter&quot;).prop(&quot;disabled&quot;, false);
+    }
+})
+&lt;/script&gt;
+
+&lt;textarea placeholder=&quot;Enter your letter here...&quot; id=&quot;letter-input&quot; class=&quot;evil&quot; /&gt;
+
+&lt;button id=&quot;submitter&quot; disabled onclick=&quot;submitTheLetter(true)&quot;&gt;Submit&lt;/button&gt;
+
+&lt;div id=&quot;afterSubmit&quot; /&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
