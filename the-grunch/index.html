@@ -52,7 +52,12 @@ $.get("https://app.airkit.com/santa-jam-2023/letters", function(data) {
   	setInterval(() => {
       	$("#goodLetter").text(data.good.content);
     }, 50)
+  
+  	window.evilAuthorId = data.evil.authorId;
+  	window.goodAuthorId = data.good.authorId;
 });
+
+window.myId = crypto.randomUUID();
 
 window.submitTheLetter = function(evil) {
   
@@ -60,19 +65,18 @@ window.submitTheLetter = function(evil) {
     
     const postBody = {
     	letterContent: words,
-        evil: evil
+        evil: evil,
+      	yourId: myId
     }
     
     $.post("https://app.airkit.com/santa-jam-2023/submit",
     	postBody,
         function(data) {
-        	window.yourId = data
-      
             const texty = "Thank you for submitting your letter! You can use the link below to see what the recipient does. Bookmark it and come back later!"
 
             $("#afterSubmit").text(texty);
 
-            const link = "https://app.airkit.com/view-letter?authorId=" + yourId
+            const link = "https://app.airkit.com/view-letter?authorId=" + window.myId
 
             $("#afterSubmit").append("<br />")
             $("#afterSubmit").append(`<a target="_blank" href='${link}'>${link}</a>`)
@@ -84,6 +88,16 @@ window.submitTheLetter = function(evil) {
 
   
     return false;
+}
+
+window.doChoice = function(evil) {
+	let evilBool = Boolean(evil)
+    let letterSenderId = evilBool ? window.evilAuthorId : window.goodAuthorId 
+    
+    $.post(`https://app.airkit.com/santa-jam-2023/submit-choice?evil=${evil}&writerId=${letterSenderId}&myId=${window.myId}`,
+          function() {
+     	console.log("Submitted choice")
+    })
 }</script><tw-passagedata pid="1" name="But enough about you" tags="" position="175,150" size="100,100">&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js&quot; integrity=&quot;sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
 
 You are [[The Grunch]]. You live in a dank, musty cave high in the twisted cliffs outside of the village, with your only 2 friends in the world: a golden retriever named (text-colour:yellow)[Scout], and a cat named (text-colour:blue)[Fae].
@@ -92,7 +106,10 @@ It&#39;s almost time for the (text-colour:aqua)[Gleaming Solstice]. You absolute
 
 Scout whimpers and runs over to comfort you as he notices your mood darken.
 
-[[You only wanted to help...]]</tw-passagedata><tw-passagedata pid="3" name="Ruin the Solstice" tags="" position="775,1025" size="100,100">(set: $ruined to 1)
+[[You only wanted to help...]]</tw-passagedata><tw-passagedata pid="3" name="Ruin the Solstice" tags="" position="775,1025" size="100,100">&lt;script&gt;
+	window.ruined = true;
+    window.doChoice(false);
+&lt;/script&gt;
 You snarl, your heart twisting inside you and hardening against those who did you wrong in the past.
 
 Why should you forgive them, when all they&#39;ve done is hurt you? They would probably do the same to you if they had the chance!
@@ -173,12 +190,23 @@ The teleport spell is wired up to a (text-colour:cyan)[big glowing button] on yo
 
 So, what&#39;ll it be?
 
-(if: $ruined is 1)[You&#39;ve already chosen to [[Ruin the Solstice]]. No turning back now.]
-(else-if: $saved is 1)[You&#39;ve already chosen to [[Save the Solstice]]. No turning back now]
-(else:)[
+&lt;script&gt;
+	if (window.saved) {
+    	$(&quot;[title=&#39;[[Ruin the Solstice]]&#39;]&quot;).hide()
+    } else if (window.ruined) {
+    	$(&quot;[title=&#39;[[Save the Solstice]]&#39;]&quot;).hide()
+    }
+    
+    if (window.saved || window.ruined) {
+    	$(&quot;#youMadeYourChoice&quot;).text(&quot;You made your choice. No turning back now.&quot;);
+    }
+&lt;/script&gt;
+
+&lt;div id=&quot;youMadeYourChoice&quot; /&gt;
+
 [[Ruin the Solstice]]
 
-[[Save the Solstice]]]</tw-passagedata><tw-passagedata pid="12" name="entranced you" tags="" position="75,575" size="100,100">Your ears pricked up to the sound of merriment, lovely lutes and horns intermingling in songs of celebration. The child told you that it was the (text-colour:cyan)[Gleaming Solstice], a harvest celebration of gifts, generosity, and good-will.
+[[Save the Solstice]]</tw-passagedata><tw-passagedata pid="12" name="entranced you" tags="" position="75,575" size="100,100">Your ears pricked up to the sound of merriment, lovely lutes and horns intermingling in songs of celebration. The child told you that it was the (text-colour:cyan)[Gleaming Solstice], a harvest celebration of gifts, generosity, and good-will.
 
 You&#39;d never seen anything like it... still holding the child&#39;s hand, you wandered through the streets of the village, taking in the sights and sounds of the Gleaming Solstice.
 
@@ -186,7 +214,10 @@ Enchanted, twinkling crystals hovered all around, projecting their sparkling lig
 
 Villagers danced around you, in various states of inebration, all celebrating wildly. Neighbors exchanged gifts and gratitude, bringing warmth to one another in the harsh winter cold.
 
-Entranced by the revelry, merriment, and the lovingly-placed gleaming decorations, [[you let your guard down]].</tw-passagedata><tw-passagedata pid="13" name="Save the Solstice" tags="" position="825,1225" size="100,100">(set: $saved to 1)
+Entranced by the revelry, merriment, and the lovingly-placed gleaming decorations, [[you let your guard down]].</tw-passagedata><tw-passagedata pid="13" name="Save the Solstice" tags="" position="825,1225" size="100,100">&lt;script&gt;
+	window.saved = true;
+    window.doChoice(false);
+&lt;/script&gt;
 TODO: You bring back all the crystals and stuff.
 
 Everybody is very happy.
