@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
-    <title>Your Podcast Title</title>
-    <link>Your Podcast Homepage</link>
+    <title>Sam's Friends</title>
     <language>en-us</language>
-    <itunes:author>Your Name</itunes:author>
-    <description>Your podcast description</description>
+    <itunes:author>Joey</itunes:author>
+    <description>Friends for Sam!</description>
     <itunes:image href="https://elliotfiske.github.io/sam-present/joey.png" />
     
     <!-- Podcast episode entries -->
     <item>
-      <title>Episode Title</title>
-      <itunes:author>Your Name</itunes:author>
-      <description>Episode description</description>
+      <title>S1E1</title>
+      <itunes:author>Joey</itunes:author>
+      <description>The friends' iconic couch starts giving life advice to anyone who sits on it, turning Central Perk into a pilgrimage site for soul-searchers. Joey is convinced the couch is his new acting coach, while Ross attempts to scientifically analyze its wisdom.</description>
       <enclosure url="https://elliotfiske.github.io/sam-present/sam-present-ep1-1.mp3" type="audio/mp3" length="28310000"/>
-      <guid>URL to your MP3 file</guid>
+      <guid>https://elliotfiske.github.io/sam-present/sam-present-ep1-1.mp3</guid>
       <pubDate>Wed, 15 Jun 2022 10:00:00 GMT</pubDate>
       <itunes:duration>00:22:41</itunes:duration>
     </item>
