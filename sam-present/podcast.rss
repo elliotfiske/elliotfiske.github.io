@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Your Podcast Title</title>
+    <link>Your Podcast Homepage</link>
+    <language>en-us</language>
+    <itunes:author>Your Name</itunes:author>
+    <description>Your podcast description</description>
+    <itunes:image href="https://elliotfiske.github.io/sam-present/joey.png" />
+    
+    <!-- Podcast episode entries -->
+    <item>
+      <title>Episode Title</title>
+      <itunes:author>Your Name</itunes:author>
+      <description>Episode description</description>
+      <enclosure url="https://elliotfiske.github.io/sam-present/sam-present-ep1-1.mp3" type="audio/mp3" length="28310000"/>
+      <guid>URL to your MP3 file</guid>
+      <pubDate>Wed, 15 Jun 2022 10:00:00 GMT</pubDate>
+      <itunes:duration>00:22:41</itunes:duration>
+    </item>
+    <!-- Repeat <item> block for each episode -->
+  </channel>
+</rss>
